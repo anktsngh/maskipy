@@ -5,7 +5,7 @@ A lot of businesses have been trying to leverage Machine Learning to maintain th
 
 Maskipy improves upon the same by performing multilabel classification of the face data to not only identify if someone is wearing a mask but if they are wearing it properly.
 
-The model is trained using the [MaskedFace-Net dataset](https://github.com/cabani/MaskedFace-Net) and the [source dataset (Flickr-Faces-HQ)](https://github.com/NVlabs/ffhq-dataset), using which the MaskedFace-Net dataset was generated, to train the model for unmasked faces. However, it was ensured that faces weren't reused between the three classes (unmasked, imroperly masked, properly masked) to ensure proper generalization.
+The model is trained using the [MaskedFace-Net dataset](https://github.com/cabani/MaskedFace-Net) and the [source dataset (Flickr-Faces-HQ)](https://github.com/NVlabs/ffhq-dataset), using which the MaskedFace-Net dataset was generated, to train the model for unmasked faces. It was ensured that faces weren't reused between the three classes (unmasked, imroperly masked, properly masked) to ensure proper generalization.
 
 The classification model comprises of a sequential keras model head stacked upon headless MobileNetV2. Since the latter is high performance, low-latency model proficient in classification tasks designed of mobile devices, it fits the potential usecase. The head is trained to obtain desired classification as in the article linked earlier.
 
@@ -13,6 +13,7 @@ The driver file uses [OpenCV frontal face detector](https://github.com/opencv/op
 
 ### Installation and Usage:
 Install the packages listed in requirements.txt and run classifier_driver.py in Python3.
+
 The model can be retrained by downloading both (MaskedFace-Net dataset and Flickr-Faces-HQ) datasets as in the dataset_sample and running maskipy_train.py in Python3.
 
 ### Demo:
