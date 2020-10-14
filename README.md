@@ -5,18 +5,27 @@ Businesses have been increasingly trying to use Machine Learning solutions to ma
 
 Maskipy improves upon such systems by performing multilabel classification of the face data not only to identify if someone is wearing a mask but also if they are wearing it correctly.
 
+#
+
 ### Demo:
 ![](.github/demo.gif)
+
+#
 
 ### Dataset:
 The model was trained using the **[MaskedFace-Net dataset](https://github.com/cabani/MaskedFace-Net)** and the **[source dataset (Flickr-Faces-HQ)](https://github.com/NVlabs/ffhq-dataset)**, using which the MaskedFace-Net dataset has been generated. It was ensured that **faces weren't reused between the three classes (unmasked, improperly masked, properly masked) to ensure proper generalization.**
 
+#
+
+### Model
 The classification model comprises of headless **[MobileNetV2](https://keras.io/api/applications/mobilenet/) on which a sequential keras model (Max Pool(7,7) > Flatten > Dense(ReLu, 128) > Dense(ReLu, 128) > Dense(Softmax, 3)) is stacked**. Since MobileNetV2 is a high-performance, low-latency model proficient in classification tasks designed for mobile devices, it fits the potential use case. Only the head is retrained to obtain the desired classification.
 
 ![](https://static-01.hindawi.com/articles/cin/volume-2020/8817849/figures/8817849.fig.002.svgz)  
 MobileNetV2 Architecture (Source: ![Hindawi](https://www.hindawi.com/journals/misy/2020/7602384/))
 
 The driver file uses [OpenCV frontal face detector](https://github.com/opencv/opencv/blob/master/data/haarcascades/haarcascade_frontalface_default.xml) to extract face data from the camera feed. The model predicts the class based on the same that gets displayed on the screen above the bounding box(es).
+
+#
 
 ### Installation and Usage:
 * Clone the repository, create a new environment, if required, and install the required Python packages:
@@ -38,6 +47,8 @@ wget https://dl.dropboxusercontent.com/s/ivn22i3kr1i9udq/dataset.zip && unzip da
 ```
 python maskipy_train.py --config config.ini
 ```
+
+#
 
 ### Model Performance:
 
