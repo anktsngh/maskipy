@@ -20,8 +20,8 @@ The model was trained using the **[MaskedFace-Net dataset](https://github.com/ca
 ### Model
 The classification model comprises of headless **[MobileNetV2](https://keras.io/api/applications/mobilenet/) on which a sequential keras model (Max Pool(7,7) > Flatten > Dense(ReLu, 128) > Dense(ReLu, 128) > Dense(Softmax, 3)) is stacked**. Since MobileNetV2 is a high-performance, low-latency model proficient in classification tasks designed for mobile devices, it fits the potential use case. Only the head is retrained to obtain the desired classification.
 
-![](https://static-01.hindawi.com/articles/cin/volume-2020/8817849/figures/8817849.fig.002.svgz)  
-MobileNetV2 Architecture (Source: ![Hindawi](https://www.hindawi.com/journals/misy/2020/7602384/))
+![](https://user-images.githubusercontent.com/15859199/196212494-ed50e85d-d6ae-4649-bc91-e2876636e478.PNG)
+MobileNetV2 Architecture (Source: [Hindawi](https://www.hindawi.com/journals/misy/2020/7602384/))
 
 The driver file uses [OpenCV frontal face detector](https://github.com/opencv/opencv/blob/master/data/haarcascades/haarcascade_frontalface_default.xml) to extract face data from the camera feed. The model predicts the class based on the same that gets displayed on the screen above the bounding box(es).
 
