@@ -1,6 +1,6 @@
 # maskiPy: Multi-class classifier to detect unmasked, improperly masked, and properly masked human faces.
 **You can try maskipy [here](https://huggingface.co/spaces/anktsngh/maskipy).**  
-*(Network latency might result in non-optimal realtime classification performance.)*
+*(Non-GPU host & network latency shall result in non-optimal realtime classification performance.)*
 
 ### Overview:
 Businesses have been increasingly trying to use Machine Learning solutions to maintain their foothold in the contemporary world ravaged by COVID-19. For instance, some food delivery platforms have deployed AI-driven systems, like the one [here](https://www.pyimagesearch.com/2020/05/04/covid-19-face-mask-detector-with-opencv-keras-tensorflow-and-deep-learning/), which detect if their delivery partner is wearing a mask. However, I often find the delivery partners wearing their face mask on the chin or mouth-chin that compromises consumer safety.
